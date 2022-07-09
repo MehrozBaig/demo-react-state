@@ -1,16 +1,16 @@
 import react, {useState} from 'react';
+import './Room.css'
 
 function Room() {
     //const state = useState(true);
     //console.log(state);
-    const [isLit, setLit] = useState(true); 
-    const [age, setAge] = useState(23);
+    let [isLit, setLit] = useState(true); 
     function updateLit() {
         console.log("Button Clicked");
         setLit(!isLit);
     }
     return (
-    <div>
+    <div className={'room ${isLit? "lit": "dark"}'}>
         This room is {isLit? "lit" : "dark"}
         <br/>
         <button onClick={updateLit}>Toggle Light</button>
